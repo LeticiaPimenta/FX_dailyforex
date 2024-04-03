@@ -2,6 +2,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddAuthentication("CookieAuthentication").AddCookie("CookieAuthentication", options =>
+{
+    options.Cookie.Name = "CookieAuthentication";
+    options.LoginPath = "/Login/Login";
+});
 
 var app = builder.Build();
 
@@ -17,6 +22,8 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+
+app.UseAuthentication();
 
 app.UseAuthorization();
 

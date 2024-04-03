@@ -1,5 +1,6 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
+    background: #e4e5e6;
 }
 
 @media (min-width: 768px) {
@@ -18,5 +19,34 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background: #e4e5e6;
+}
+
+.modal-login {
+    padding: 25px;
+    background: #fff;
+    width: 22pc;
+    box-shadow: 3px 3px 7px 0px #b8b8b8;
+}
+
+.w-300 {
+    width: 300px;
+}
+
+.input-login {
+    text-transform: uppercase;
+    border-radius: 0px;
+    font-size: smaller;
+    color: #ced4da;
+    font-weight: 300;
+}
+
+.btn-login {
+    color: #fff;
+    background-color: #42afb7;
+    border-color: #42afb7;
+    font-size: smaller;
+    padding: 8px 35px;
+    border-radius: 0px;
 }

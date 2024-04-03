@@ -1,0 +1,25 @@
+﻿@page "/Login"
+@model FX_dailyforex.Pages.Login.LoginModel
+@{
+}
+
+
+<div class="container border modal-login" >
+
+    <form class="form-signin d-flex flex-column align-items-center" method="post">
+        <img class="mb-4 align-self-center" src="../image/logo-color.svg" alt="VFX Financial logo" width="100">
+        <div class="mb-4 row w-300">
+            <input type="text" asp-for="Authentication.ClientId" class="form-control input-login" placeholder="Client ID" required>
+        </div>
+
+        <div class="mb-4 row w-300">
+            <input type="text" asp-for="Authentication.UserId" class="form-control input-login" placeholder="User ID" required>
+        </div>
+
+        <div class="mb-5 row w-300">
+            <input type="password" asp-for="Authentication.Password" class="form-control input-login" placeholder="Password" required>
+        </div>
+
+        <button class="btn btn-login mb-2" type="submit">Sign me in</button>
+    </form>
+</div>
