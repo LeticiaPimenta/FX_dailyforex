@@ -5,7 +5,7 @@ builder.Services.AddRazorPages();
 builder.Services.AddAuthentication("CookieAuthentication").AddCookie("CookieAuthentication", options =>
 {
     options.Cookie.Name = "CookieAuthentication";
-    options.LoginPath = "/Login/Login";
+    options.LoginPath = "/Login";
 });
 
 var app = builder.Build();
