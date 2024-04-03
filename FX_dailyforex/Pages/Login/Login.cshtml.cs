@@ -14,8 +14,27 @@ namespace FX_dailyforex.Pages.Login
         public void OnGet()
         {
         }
-        
-        public void OnPost() { }
+        public async Task<IActionResult> OnPostAsync()
+        {
+            if (!ModelState.IsValid) return Page();
+
+            if (Authentication.ClientId == "012345" && Authentication.UserId == "012345" && Authentication.Password == "012345")
+            {
+                var claims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Name, "John"),
+                    new Claim(ClaimTypes.Email, "john@vfxfinancial.com.br")
+                };
+
+                var identity = new ClaimsIdentity(claims, "CookieAuthentication");
+                ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);
+
+                await HttpContext.SignInAsync("CookieAuthentication", claimsPrincipal);
+
+                return RedirectToPage("/Index");
+            }
+            return Page();
+        }
     }
 
     public class Authentication
